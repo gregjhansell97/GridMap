@@ -11,10 +11,30 @@ void GridMap::add(unsigned x, unsigned y, int value){
   this->add(n);
 }
 
+vector<GridMap> GridMap::get_sub_grids(unsigned upper, unsigned)
+
 
 //TODO: finish this bruh
 vector<int> GridMap::get_values(unsigned x, unsigned y, unsigned radius){
+  upper = y + radius;
+  lower = y - radius;
+  right = x + radius;
+  left = x - radius;
+
+
   if(this->sub_grids.size() > 0){
+    vector<int> values;
+    unsigned upper, lower, right, left;
+
+    unsigned b_x = left;
+    unsigned b_y = upper;
+    for(; b_x <= right; b_x++){
+      vector<int> n;
+      n = get_values(x/this->width, y/this->height, radius)
+    }
+
+
+
     set<pair<unsigned, unsigned> > coordinates;
     bool sub;
     bool add_y;
@@ -69,4 +89,6 @@ void GridMap::create_sub_grids(){
   for(GridNode* node : nodes){
     this->add(node);
   }
+  nodes.clear();
+  nodes.shrink_to_fit();
 }

@@ -64,6 +64,7 @@ private:
   //functions
   void create_sub_grids();
   void add(GridNode* node);
+  vector<GridMap> get_sub_grids();
 };
 
 #endif
