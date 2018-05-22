@@ -141,10 +141,10 @@ class GridMap:
                     #location is in boundaries
                     if x_min <= n.x <= x_max and y_min <= n.y <= y_max:
                         nodes.append(n)
-            elif x_min <= gm.min_x
+            elif (x_min <= gm.min_x
                 and x_max >= gm.max_x
                 and y_min <= gm.min_y
-                and y_max >= gm.max_y:
+                and y_max >= gm.max_y):
                 #boundaries larger than grid so just grab nodes
                 nodes.extend(gm.nodes)
             elif gm.overlaps(x_min, y_min, x_max, y_max):
@@ -188,10 +188,10 @@ class GridMap:
     def overlaps(self, x_min, y_min, x_max, y_max):
         x_range = range(self.min_x,self.max_x + 1)
         y_range = range(self.min_y, self.max_y + 1)
-        if (x_min in x_range and y_min in y_range)
+        if ((x_min in x_range and y_min in y_range)
             or (x_max in x_range and y_min in y_range)
             or (x_min in x_range and y_max in y_range)
-            or (x_max in x_range and y_max in y_range):
+            or (x_max in x_range and y_max in y_range)):
             #one is inside the other:
             return True
 
@@ -199,10 +199,10 @@ class GridMap:
         x_range = range(x_min, x_max + 1)
         y_range = range(y_min, y_max + 1)
 
-        if (self.min_x in x_range and self.min_y in y_range)
+        if ((self.min_x in x_range and self.min_y in y_range)
             or (self.max_x in x_range and self.min_y in y_range)
             or (self.min_x in x_range and self.max_y in y_range)
-            or (self.max_x in x_range and self.max_y in y_range):
+            or (self.max_x in x_range and self.max_y in y_range)):
             #one is inside the other:
             return True
         return False
