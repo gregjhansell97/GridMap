@@ -159,6 +159,7 @@ class GridMap:
                     gm.sub_grids[1][0],
                     gm.sub_grids[0][1],
                     gm.sub_grids[1][1]])
+        return nodes
 
     """
     Used to calculate index of given value (either 1 or 0)
