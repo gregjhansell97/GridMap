@@ -6,8 +6,8 @@ public:
   GridNode(
     unsigned x,
     unsigned y,
-    int data):
-    x(x), y(y), data(data){}
+    int data);
+    
   unsigned x;
   unsigned y;
   int data;
